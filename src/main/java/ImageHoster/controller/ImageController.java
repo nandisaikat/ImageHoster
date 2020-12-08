@@ -45,9 +45,22 @@ public class ImageController {
     //Also now you need to add the tags of an image in the Model type object
     //Here a list of tags is added in the Model type object
     //this list is then sent to 'images/image.html' file and the tags are displayed
-    @RequestMapping("/images/{title}")
-    public String showImage(@PathVariable("title") String title, Model model) {
-        Image image = imageService.getImageByTitle(title);
+    @RequestMapping("/images/{imageId}/{title}")
+    public String showImage(@PathVariable("title") String title, @PathVariable("imageId") int imageId,  Model model) {
+
+        /** PartA Issue #1: https://github.com/upgrad-edu/Course_4_Assignment/issues/1
+         *
+         * Getting the image Id from the JSP. Using the imageId to call getImage method instead of getImageByTitle method.
+         * Using imageId will always return a single image corresponding to that ImageId
+         *
+         * Action Taken:
+         * Commented the getImageByTitle method call.
+         * Calling getImage(imageId) method of ImageService.
+         *
+         */
+
+        //Image image = imageService.getImageByTitle(title);
+        Image image = imageService.getImage(imageId);
         model.addAttribute("image", image);
         model.addAttribute("tags", image.getTags());
         return "images/image";
