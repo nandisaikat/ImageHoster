@@ -12,6 +12,12 @@
     <header th:replace="layout :: logged-in"></header>
 
     <!-- You need to print the error message if the non owner of the image is trying to edit or delete the image-->
+
+    <!--
+    PartA Issue #2: https://github.com/upgrad-edu/Course_4_Assignment/issues/3
+    Displaying corresponding error messages for the Edit and Delete operations
+    if the logged in user is not the owner of the images.
+    -->
     <div class="dtc v-mid w-75 tr">
         <a th:href="@{/editImage(imageId=${image.id})}">Edit</a>
         <!-- Show the edit error if the non owner of the image is trying to edit the image-->
