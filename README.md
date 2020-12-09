@@ -24,3 +24,10 @@ mvn spring-boot:run
 - The user can log in the application by entering the username and password, and after successful login to the application, the user is redirected to the user homepage, displaying all the images in the application.
 - After a user successfully logs in the application, he can click on the title of any image and the image details will be displayed including the description and tags of the image, along with the option to edit and delete the image.
 - A user can also upload the image by entering the details such as image title, description, image file, and tags related to the image.
+
+## New Features
+- The application checks for the password strength at the time of user registration. The password must contain at least 1 alphabet (a-z or A-Z), 1 number (0-9) and 1 special character (any character other than a-z, A-Z and 0-9).
+
+## Bugs (Fixed)
+- Application throws a HTTP 500 error if there are images with the same title. Resolved by passing the imageId and fetching image data based on imageId instead of imageTitle.
+- Application allows users to edit/delete images that has not been uploaded by the user. Resolved by implementing a check for logged in userId and the Image owner userId before allowing edit/delete operations.
