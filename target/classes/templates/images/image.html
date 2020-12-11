@@ -58,7 +58,11 @@
             </li>
         </ul>
 
-        <!--<h5 class="f4 mb0 underline">Comments</h5>-->
+        <!--
+        * PartB Feature #2: Adding Comments for an image.
+        * Adding the comments for an image in the model for the image page to display.
+        -->
+        <h5 class="f4 mb0 underline">Comments</h5>
         <!-- A form to upload a comment to a particular image-->
         <form method="POST" enctype="multipart/form-data"
               th:action="'/image/'+ ${image.id} + '/' + ${image.title} + '/comments'">
