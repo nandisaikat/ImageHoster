@@ -30,4 +30,8 @@ mvn spring-boot:run
 
 ## Bugs (Fixed)
 - Application throws a HTTP 500 error if there are images with the same title. Resolved by passing the imageId and fetching image data based on imageId instead of imageTitle.
+<<<<<<< HEAD
 - Application allows users to edit/delete images that has not been uploaded by the user. Resolved by implementing a check for logged in userId and the Image owner userId before allowing edit/delete operations.
+=======
+- Application allows users to edit/delete images that has not been uploaded by the user. Resolved by implementing a check for logged in userId and the Image owner userId before allowing edit/delete operations.
+>>>>>>> 90e287abb2e86928525d205c8ba8b71b36874321
