@@ -142,10 +142,6 @@ public class ImageController {
             model.addAttribute("tags", image.getTags());
             return "images/image";
         }
-
-
-
-
         return "images/edit";
 
     }
@@ -206,6 +202,7 @@ public class ImageController {
             String error = "Only the owner of the image can delete the image";
             model.addAttribute("deleteError", error);
             model.addAttribute("tags", image.getTags());
+            model.addAttribute("comments", image.getComments());
             return "images/image";
         }
 
