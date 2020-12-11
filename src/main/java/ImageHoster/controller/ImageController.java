@@ -63,6 +63,13 @@ public class ImageController {
         Image image = imageService.getImage(imageId);
         model.addAttribute("image", image);
         model.addAttribute("tags", image.getTags());
+
+        /**
+         * PartB Feature #2: Adding Comments for an image.
+         * Adding the comments for an image in the model for the image page to display.
+         */
+
+        model.addAttribute("comments", image.getComments());
         return "images/image";
     }
 
@@ -111,6 +118,13 @@ public class ImageController {
         String tags = convertTagsToString(image.getTags());
         model.addAttribute("image", image);
         model.addAttribute("tags", tags);
+
+        /**
+         * PartB Feature #2: Adding Comments for an image.
+         * Adding the comments for an image in the model for the image page to display.
+         */
+
+        model.addAttribute("comments", image.getComments());
         return "images/edit";
     }
 

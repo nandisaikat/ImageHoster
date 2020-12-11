@@ -51,6 +51,18 @@ public class Image {
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Tag> tags = new ArrayList<>();
 
+
+    /**
+     * PartB Feature #2: Adding Comments for an image.
+     *
+     * The attribute contains a list of all the comments for an image
+     * Note that user_id and Image_id column will be created in the comments table as the mapping is One to Many.
+     *
+     */
+
+    @OneToMany(mappedBy = "image", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Comment> comments = new ArrayList<>();
+
     public Image() {
     }
 
@@ -125,5 +137,19 @@ public class Image {
 
     public void setTags(List<Tag> tags) {
         this.tags = tags;
+    }
+
+    /**
+     * @return the comments
+     */
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    /**
+     * @param comments the comments to set
+     */
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }
