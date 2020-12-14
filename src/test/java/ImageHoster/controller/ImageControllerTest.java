@@ -1,4 +1,4 @@
-/*
+
 package ImageHoster.controller;
 
 import ImageHoster.model.Image;
@@ -225,11 +225,11 @@ public class ImageControllerTest {
         image.setDescription("This image is for testing purpose");
         image.setUser(user1);
 
-
         Mockito.when(imageService.getImage(Mockito.anyInt())).thenReturn(image);
 
         this.mockMvc.perform(get("/editImage")
                 .param("imageId", "1")
+                .param("tags", "test")
                 .session(session))
                 .andExpect(model().attribute("editError", "Only the owner of the image can edit the image"));
     }
@@ -310,4 +310,3 @@ public class ImageControllerTest {
     }
 }
 
-*/
