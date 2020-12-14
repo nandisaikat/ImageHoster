@@ -1,3 +1,5 @@
+![Optional Text](images/git_log.png)
+
 # ImageHoster
 An Image hosting web application that hosts images uploaded by users and allows tagging and writing comments.
 
