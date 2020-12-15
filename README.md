@@ -29,11 +29,9 @@ mvn spring-boot:run
 
 ## New Features
 - The application checks for the password strength at the time of user registration. The password must contain at least 1 alphabet (a-z or A-Z), 1 number (0-9) and 1 special character (any character other than a-z, A-Z and 0-9).
+- The application allows users to add comments to an image after the user has logged into the system.
 
 ## Bugs (Fixed)
 - Application throws a HTTP 500 error if there are images with the same title. Resolved by passing the imageId and fetching image data based on imageId instead of imageTitle.
-<<<<<<< HEAD
 - Application allows users to edit/delete images that has not been uploaded by the user. Resolved by implementing a check for logged in userId and the Image owner userId before allowing edit/delete operations.
-=======
 - Application allows users to edit/delete images that has not been uploaded by the user. Resolved by implementing a check for logged in userId and the Image owner userId before allowing edit/delete operations.
->>>>>>> 90e287abb2e86928525d205c8ba8b71b36874321
